@@ -1,8 +1,8 @@
 h1 Welcome to FizzBuzz
 
 = simple_form_for :numbers do |f|
-  = f.input :min
-  = f.input :max
+  = f.input :min, :input_html => { :value => @min }
+  = f.input :max, :input_html => { :value => @max }
   = f.submit "Generate"
 
 h2 Numbers
