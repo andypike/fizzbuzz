@@ -9,5 +9,11 @@ describe FizzBuzz do
         expect(subject.build_list(1..15)).to eq(list)
       end
     end
+
+    context "with a range of 1..1" do
+      it "returns 1" do
+        expect(subject.build_list(1..1)).to eq(["1"])
+      end
+    end
   end
 end
