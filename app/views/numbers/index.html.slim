@@ -1,1 +1,9 @@
 h1 Welcome to FizzBuzz
+
+= simple_form_for :numbers do |f|
+  = f.input :min
+  = f.input :max
+  = f.submit "Generate"
+
+h2 Numbers
+p= @numbers.join(", ")
