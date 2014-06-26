@@ -4,6 +4,8 @@ class FizzBuzz
       range.each do |n|
         if n % 3 == 0
           list << "Fizz"
+        elsif n % 5 == 0
+          list << "Buzz"
         else
           list << n.to_s
         end
