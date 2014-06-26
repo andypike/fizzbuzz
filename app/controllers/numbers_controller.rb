@@ -1,5 +1,15 @@
 class NumbersController < ApplicationController
   def index
-    @numbers = %w(1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz)
+    @numbers = FizzBuzz.build_list(min..max)
+  end
+
+  private
+
+  def min
+    params[:numbers][:min].to_i
+  end
+
+  def max
+    params[:numbers][:max].to_i
   end
 end
