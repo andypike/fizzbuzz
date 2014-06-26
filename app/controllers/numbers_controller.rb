@@ -6,7 +6,7 @@ class NumbersController < ApplicationController
   private
 
   def params_with_defaults
-    params.reverse_merge(:numbers => { :min => 1, :max => 10 })
+    params.reverse_merge!(:numbers => { :min => 1, :max => 10 })
   end
 
   def min

@@ -6,11 +6,19 @@ describe "FizzBuzz game" do
     expect(page).to have_content(/fizzbuzz/i)
   end
 
-  it "defaults to show numbers from 1 to 10" do
-    visit root_path
-    expect(page).to have_content(
-      "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz"
-    )
+  context "with no input" do
+    it "defaults to show numbers from 1 to 10" do
+      visit root_path
+      expect(page).to have_content(
+        "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz"
+      )
+    end
+
+    it "populates the form with current values" do
+      visit root_path
+      expect(find_field("Min").value).to eq("1")
+      expect(find_field("Max").value).to eq("10")
+    end
   end
 
   context "valid input" do
