@@ -6,6 +6,13 @@ describe "FizzBuzz game" do
     expect(page).to have_content(/fizzbuzz/i)
   end
 
+  it "defaults to show numbers from 1 to 10" do
+    visit root_path
+    expect(page).to have_content(
+      "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz"
+    )
+  end
+
   context "valid input" do
     it "shows FizzBuzz numbers between a given range" do
       visit root_path
