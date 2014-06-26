@@ -14,6 +14,7 @@ class FizzBuzz
       FizzBuzzProcessor,
       FizzProcessor,
       BuzzProcessor,
+      LeetProcessor,
       DefaultProcessor
     ]
   end
