@@ -1,17 +1,20 @@
 class FizzBuzz
   def build_list(range)
     [].tap do |list|
-      range.each do |n|
-        if n % 3 == 0 && n % 5 == 0
-          list << "FizzBuzz"
-        elsif n % 3 == 0
-          list << "Fizz"
-        elsif n % 5 == 0
-          list << "Buzz"
-        else
-          list << n.to_s
+      range.map{ |n| Number.new(n) }.each do |n|
+        processors.each do |processor|
+          processor.new(list, n).process
         end
       end
     end
+  end
+
+  def processors
+    [
+      FizzBuzzProcessor,
+      FizzProcessor,
+      BuzzProcessor,
+      DefaultProcessor
+    ]
   end
 end
