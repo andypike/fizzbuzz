@@ -15,5 +15,11 @@ describe FizzBuzz do
         expect(subject.build_list(1..1)).to eq(["1"])
       end
     end
+
+    context "with a range of 3..3" do
+      it "returns Fizz" do
+        expect(subject.build_list(3..3)).to eq(["Fizz"])
+      end
+    end
   end
 end
