@@ -1,15 +1,17 @@
 class NumbersController < ApplicationController
   def index
-    @numbers = FizzBuzz.build_list(min..max)
+    @numbers = FizzBuzz.new.build_list(min..max)
   end
 
   private
 
   def min
-    params[:numbers][:min].to_i
+    return params[:numbers][:min].to_i if params[:numbers]
+    1
   end
 
   def max
-    params[:numbers][:max].to_i
+    return params[:numbers][:max].to_i if params[:numbers]
+    10
   end
 end
